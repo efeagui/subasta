@@ -1,0 +1,50 @@
+{% extends "auctions/layout.html" %} 
+{% block body %}
+<h2 class="page-title">Active Listings</h2>
+
+<div class="listings-grid">
+    {% for listing in listings %}
+    <div class="listing-card">
+        <div class="listing-image">
+            {% if listing.image_url %}
+            <img src="{{ listing.image_url }}" alt="{{ listing.title }}" />
+            {% else %}
+            <div class="no-image">No Image Available</div>
+            {% endif %}
+        </div>
+        <div class="listing-details">
+            <h3><a href="{% url 'listing' listing.id %}">{{ listing.title }}</a></h3>
+            <p class="listing-description">
+                {{ listing.description|truncatewords:20 }}
+            </p>
+            <div class="listing-bottom" style="display: flex; justify-content: space-between; align-items: center;">
+                <p class="listing-price">Current price: <span class="price">${{ listing.current_price }}</span></p>
+                <form class="watchlist-form" action="{% url 'toggle_watchlist' listing.id %}" method="post" style="margin: 0;">
+                    {% csrf_token %}
+                    <button type="submit" style="background: none; border: none; cursor: pointer;">
+                        {% if listing in watchlist %}
+                        <i class="fas fa-heart" style="color: red;"></i>
+                        {% else %}
+                        <i class="far fa-heart" style="color: red;"></i>
+                        {% endif %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="no-listings">No active listings at the moment.</p>
+    {% endfor %}
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var alertMessage = '{{ message }}';
+          if (alertMessage) {
+              alert(alertMessage);
+          }
+      });
+  </script>
+  
+    
+</div>
+{% endblock %}

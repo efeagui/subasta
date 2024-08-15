@@ -1,0 +1,225 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #3498db;
+}
+
+/* Estilos para listados */
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.listing-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+}
+
+.listing-description {
+    text-align: justify;
+}
+
+.price {
+    color: #28a745; /* Verde */
+    font-weight: bold;
+    
+}
+
+/* Estilos para el detalle del listado */
+.listing-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.listing-details {
+    padding: 1rem; /* Espaciado interno */
+}
+
+.listing-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.listing-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.listing-image {
+    flex: 1;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.listing-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.listing-info {
+    flex: 2;
+}
+
+.listing-meta {
+    margin-top: 1rem;
+}
+
+.listing-meta p {
+    margin: 0.5rem 0;
+}
+
+/* Sección de comentarios */
+.comments-section {
+    margin-top: 2rem;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.bid-section {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido a la derecha */
+    margin-top: 1rem; /* Espacio superior para separación */
+}
+
+.comment {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
+}
+
+.comment-form textarea {
+    width: 100%;
+    height: 50px; /* Altura reducida */
+    resize: none; /* Desactiva el redimensionamiento */
+}
+
+.comment-user {
+    font-weight: bold;
+}
+
+.comment-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-left: 10px;
+}
+
+
+/* Formularios */
+.create-listing-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.create-listing-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.create-listing-form label {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.create-listing-form input[type="text"],
+.create-listing-form input[type="number"],
+.create-listing-form input[type="url"],
+.create-listing-form textarea,
+.create-listing-form select {
+    width: 100%;
+    padding: 0.55rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.create-listing-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.create-listing-form .btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
